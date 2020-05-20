@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html long="en">
+<head>
+	<meta charset="utf-8">
+	<title>Suma y multiplicación de matrices</title>
+	<script type="text/javascript">
+		//Declaramos esta funcion que despues sera llamda por el boton
+	function opc_menu()
+	{
+		var opcion = parseFloat(document.getElementById('opcion').value);
+		//Hacer condicionales para evitar que ingresen un numero mayor o menor al especificado
+		if (opcion<1 || opcion>6) 
+		{
+			alert("Ingresa un valor valido");
+		}
+		if (opcion==1) 
+		{
+			alert("Has elegido la opcion de suma de matrices")
+			//Declarar mi matriz numero uno
+			var matriz_uno = new Array(3);
+			for (var i = 0; i<matriz_uno.length; i++)
+			{
+				matriz_uno[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la primera matriz");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					matriz_uno[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Decalar mi matriz numero dos		
+			var matriz_dos = new Array(3);
+			for (var i = 0; i<matriz_dos.length; i++)
+			{
+				matriz_dos[i]=new Array(3);
+			}
+
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la segunda matriz");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					matriz_dos[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Mostar matriz numero uno
+			document.write("Matriz numero uno: <br>");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					document.write(matriz_uno[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Mostar matriz numero dos
+			document.write("<br>Matriz numero dos: <br>");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					document.write(matriz_dos[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Declarar la matriz donde se guardara la suma
+			var matriz_suma = new Array(3);
+			for (var i = 0; i<matriz_suma.length; i++)
+			{
+				matriz_suma[i]=new Array(3);
+			}
+			//Hacer la suma de matrices
+			for (var i = 0; i < matriz_suma.length; i++) 
+			{
+				for (var j = 0; j < matriz_suma[i].length; j++) 
+				{
+					matriz_suma[i][j]=matriz_uno[i][j] + matriz_dos[i][j];
+				}
+			}
+			
+			//Mostar matriz donde se guardo la suma
+			document.write("<br >Suma de matrices: <br>");
+			for (var i = 0; i <matriz_suma.length ; i++) 
+			{
+				for (var j = 0; j <matriz_suma.length ; j++) 
+				{
+					document.write(matriz_suma[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+		}
+		if (opcion==2) 
+		{
+			alert("Has elegido la opcion de Resta de matrices")
+			//Declarar mi matriz numero uno
+			var matriz_uno = new Array(3);
+			for (var i = 0; i<matriz_uno.length; i++)
+			{
+				matriz_uno[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la primera matriz");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					matriz_uno[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Decalar mi matriz numero dos		
+			var matriz_dos = new Array(3);
+			for (var i = 0; i<matriz_dos.length; i++)
+			{
+				matriz_dos[i]=new Array(3);
+			}
+
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la segunda matriz");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					matriz_dos[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Mostar matriz numero uno
+			document.write("Matriz numero uno: <br>");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					document.write(matriz_uno[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Mostar matriz numero dos
+			document.write("<br>Matriz numero dos: <br>");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					document.write(matriz_dos[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Declarar la matriz donde se guardara la resta
+			var matriz_resta = new Array(3);
+			for (var i = 0; i<matriz_resta.length; i++)
+			{
+				matriz_resta[i]=new Array(3);
+			}
+			//Hacer la suma de matrices
+			document.write("<br>");
+			for (var i = 0; i < matriz_resta.length; i++) 
+			{
+				for (var j = 0; j < matriz_resta[i].length; j++) 
+				{
+					matriz_resta[i][j]=matriz_uno[i][j] - matriz_dos[i][j];
+				}
+			}
+			//Mostar matriz donde se guardo la suma
+			document.write("Resta de matrices: <br>");
+			for (var i = 0; i <matriz_resta.length ; i++) 
+			{
+				for (var j = 0; j <matriz_resta.length ; j++) 
+				{
+					document.write(matriz_resta[i][j]+"   ");
+				}
+				document.write("<br>");	
+			}	
+		}
+		if (opcion==3) 
+		{
+			alert("Has elegido la opcion de multiplicacion de matrices")
+			//Declarar mi matriz numero uno
+			var matriz_uno = new Array(3);
+			for (var i = 0; i<matriz_uno.length; i++)
+			{
+				matriz_uno[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la primera matriz");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					matriz_uno[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Decalar mi matriz numero dos		
+			var matriz_dos = new Array(3);
+			for (var i = 0; i<matriz_dos.length; i++)
+			{
+				matriz_dos[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la segunda matriz");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					matriz_dos[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}	
+			//Mostar matriz numero uno
+			document.write("Matriz numero uno: <br>");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					document.write(matriz_uno[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Mostar matriz numero dos
+			document.write("Matriz numero dos: <br>");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					document.write(matriz_dos[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Realizar operacion para multiplicar matrices
+			//Declarar mi matriz donde se hara la multiplicacion
+			var matriz_mul = new Array(3);
+			for (var i = 0; i<matriz_uno.length; i++)
+			{
+				matriz_mul[i]=new Array(3);
+			}
+			//Realizar operacion
+			for (var i = 0; i <matriz_mul.length ; i++) 
+			{
+				for (var j = 0; j <matriz_mul.length ; j++) 
+				{
+					matriz_mul[i][j]=0;
+					for (var k = 0; k < matriz_mul.length; k++) 
+					{
+
+						matriz_mul[i][j]=(matriz_mul[i][j]+(matriz_uno[i][k]*matriz_dos[k][j]));
+					}
+				}
+			}
+			//Mostar matriz
+			document.write("<br> Multiplicacion de matrices: <br>");
+			for (var i = 0; i <matriz_mul.length ; i++) 
+			{
+				for (var j = 0; j <matriz_mul.length ; j++) 
+				{				
+					document.write(matriz_mul[i][j]+ "   ");
+				}
+				document.write("<br>");
+			}
+		}
+		if (opcion==4) 
+		{
+			alert("Has elegido la opcion de divicion de matrices")
+			//Declarar mi matriz numero uno
+			var matriz = new Array(2);
+			for (var i = 0; i<matriz.length; i++)
+			{
+				matriz[i]=new Array(2);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la primera matriz");
+			for (var i = 0; i <matriz.length ; i++) 
+			{
+				for (var j = 0; j <matriz.length ; j++) 
+				{
+					matriz[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]: "));
+				}
+			}
+			//Mostrar la matriz uno
+			document.write("Matriz uno: <br>");
+			for (var i = 0; i <matriz.length ; i++) 
+			{
+				for (var j = 0; j <matriz.length ; j++) 
+				{
+					document.write(matriz[i][j]+ "	");
+				}
+				document.write("<br>")
+			}
+			//Declarar mi matriz numero dos
+			var matriz_dos = new Array(2);
+			for (var i = 0; i<matriz_dos.length; i++)
+			{
+				matriz_dos[i]=new Array(2);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la segunda matriz");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					matriz_dos[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]: "));
+				}
+			}
+			//Mostrar la matriz dos
+			document.write("<br>Matriz dos: <br>");
+			for (var i = 0; i <matriz_dos.length ; i++) 
+			{
+				for (var j = 0; j <matriz_dos.length ; j++) 
+				{
+					document.write(matriz_dos[i][j]+ "	");
+				}
+				document.write("<br>")
+			}
+			//Ahora se realiza la division pero lo que debo hacer es sacar la determinante de mi matriz dos asi como la adjunta de mi matriz dos para despues sacar la inversa ya que de esa manera sacare mi division.
+			// Esta es la formula: A/B = AB-1
+			//Pero debo sacar la invertida de la matriz dos despues para ello necesito la determinante asi como la adjunta de la matriz dos para sacar su determinante.
+			//Calcular la determinante de la matriz dos
+			var determinante=0;
+			for (var i = 0; i < 1; i++) 
+			{
+				for (var j = 0; j < 1; j++) 
+				{
+					determinante=(matriz_dos[0][0]*matriz_dos[1][1])-(matriz_dos[0][1]*matriz_dos[1][0])		
+				}			
+			}
+			//Mostar la determinante
+			document.write("<br>Esta es la determinante de la matriz dos: " + determinante + "<br>");
+			//Hacer la adjunta de la matriz dos
+			//Declarar una matriz donde se guarde la matriz adjunta
+			var adjunta_dos = new Array(2);
+			for (var i = 0; i<adjunta_dos.length; i++)
+			{
+				adjunta_dos[i]=new Array(2);
+			}
+			//Dar los valores a la adjunta dos
+			for (var i = 0; i < 1; i++) 
+			{
+				for (var j = 0; j < 1; j++) 
+				{
+					//En la adjunta se cambian los valores de la posicion 0,0 con la 1,1 y viceversa y las otras dos pocisiones quedan igual solo se deben cambiar al otro signo que tenga este numero y por eso solamente se multiplicac por menos uno para que ese valor no camie solo el signo
+					adjunta_dos[0][0]=matriz_dos[1][1];
+					adjunta_dos[1][1]=matriz_dos[0][0];
+					adjunta_dos[0][1]=matriz_dos[0][1];
+					adjunta_dos[1][0]=matriz_dos[1][0];
+					adjunta_dos[0][1]=(adjunta_dos[0][1]*-1)
+					adjunta_dos[1][0]=(adjunta_dos[1][0]*-1)
+				
+				}			
+			}
+			//Mostar la matriz adjunta
+			document.write("<br>Matriz dos adjunta: <br>");
+			for (var i = 0; i <adjunta_dos.length ; i++) 
+			{
+				for (var j = 0; j <adjunta_dos.length ; j++) 
+				{
+					document.write(adjunta_dos[i][j]+ "	");
+				}
+				document.write("<br>")
+			}
+			//Ya teniendo mi determinate y mi adjunta de la matriz solamente es dividir esa adjunta de la matriz entre la determinante
+			//Decalara mi variable para guardar el valor de la invertida de la matriz dos
+			var invertida_dos = new Array(2);
+			for (var i = 0; i<invertida_dos.length; i++)
+			{
+				invertida_dos[i]=new Array(2);
+			}
+			for (var i = 0; i < invertida_dos.length; i++) 
+			{
+				for (var j = 0; j < invertida_dos.length; j++) 
+				{
+					invertida_dos[i][j]=(adjunta_dos[i][j]/determinante);
+				}			
+			}
+			//Mostar la invertidad de la matriz dos
+			document.write("<br> Invertida de la matriz dos: <br>");
+			for (var i = 0; i < invertida_dos.length; i++) 
+			{
+				for (var j = 0; j < invertida_dos.length; j++) 
+				{
+					document.write(invertida_dos[i][j] +"			");	
+				}			
+				document.write("<br>");		
+			}
+			//Ahora solamnete se multiplica mi matriz uno por la invertida de la matriz dos
+			//Decalara mi variable para guardar el valor de la invertida de la matriz dos
+			var divicion_matrices = new Array(2);
+			for (var i = 0; i<divicion_matrices.length; i++)
+			{
+				divicion_matrices[i]=new Array(2);
+			}
+			//Hacer la multiplicacion
+			for (var i = 0; i <divicion_matrices.length ; i++) 
+			{
+				for (var j = 0; j <divicion_matrices.length ; j++) 
+				{
+					divicion_matrices[i][j]=0;
+					for (var k = 0; k < divicion_matrices.length; k++) 
+					{
+						divicion_matrices[i][j]=(divicion_matrices[i][j]+(matriz[i][k]*invertida_dos[k][j]));
+					}
+				}
+			}
+			//Mostar matriz
+			document.write("<br> Divicion de matrices: <br>");
+			for (var i = 0; i <divicion_matrices.length ; i++) 
+			{
+				for (var j = 0; j <divicion_matrices.length ; j++) 
+				{				
+					document.write(divicion_matrices[i][j]+ "   ");
+				}
+				document.write("<br>");
+			}
+		}
+		if (opcion==5) 
+		{
+			alert("Has elegido la opcion de Transpuesta")
+			//Declarar mi matriz numero uno
+			var matriz_uno = new Array(3);
+			for (var i = 0; i<matriz_uno.length; i++)
+			{
+				matriz_uno[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la  matriz");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					matriz_uno[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]"));
+				}
+			}
+			//Mostar matriz numero uno
+			document.write("Matriz: <br>");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					document.write(matriz_uno[i][j]+"   ");
+				}
+				document.write("<br>");
+			}
+			//Mostar matriz numero uno
+			document.write("Matriz Transpuesta: <br>");
+			for (var i = 0; i <matriz_uno.length ; i++) 
+			{
+				for (var j = 0; j <matriz_uno.length ; j++) 
+				{
+					document.write(matriz_uno[j][i]+"   ");
+				}
+				document.write("<br>");
+			}
+		}
+		if (opcion==6) 
+		{
+			alert("Has elegido la opcion de multiplicación por un escala")
+			//Declarar mi matriz numero uno
+			var matriz = new Array(3);
+			for (var i = 0; i<matriz.length; i++)
+			{
+				matriz[i]=new Array(3);
+			}
+			//Pedir valores para esa matriz
+			alert("Ingresa los valores de la primera matriz");
+			for (var i = 0; i <matriz.length ; i++) 
+			{
+				for (var j = 0; j <matriz.length ; j++) 
+				{
+					matriz[i][j]=parseInt(prompt("Ingresa el valor de la pocision [" + i +"][" + j +"]: "));
+				}
+			}
+			//Declarar el escalar
+			var escalar=0;
+			//Pedir el escalar
+			escalar=parseInt(prompt("Ingresa el escalar: " ));
+			//Mostar la matriz ingresada
+			document.write("Matriz ingresada: <br>");
+			for (var i = 0; i <matriz.length ; i++) 
+			{
+				for (var j = 0; j <matriz.length ; j++) 
+				{
+					document.write(matriz[i][j]+ "	");
+				}
+				document.write("<br>")
+			}
+			//Mostrar el escalar
+			document.write("<br> Este es el escalar por el cual se multiplicara: "+escalar +"<br>" );
+			//Declara mi otra matriz
+			var matriz_2 = new Array(3);
+			for (var i = 0; i<matriz_2.length; i++)
+			{
+				matriz_2[i]=new Array(3);
+			}
+			//Hacer la operacion para obtener la multiplicacion
+			for (var i = 0; i <matriz.length ; i++) 
+			{
+				for (var j = 0; j <matriz.length ; j++) 
+				{
+					matriz_2[i][j]=matriz[i][j]*escalar;
+				}
+			}
+			//Mostrar el resultado
+			document.write("<br> Multiplicacion por escalar: <br>");		
+			for (var i = 0; i <matriz_2.length ; i++) 
+			{
+				for (var j = 0; j <matriz_2.length ; j++) 
+				{
+					document.write(matriz_2[i][j]+ "	");
+				}
+				document.write("<br>")
+			}
+		}
+	}	
+	</script>
+</head>
+<body bgcolor="#000000">
+	<p><font face="times new roman" color="red"size="+2">Selecciona una opcion: </p>
+	<p><font face="times new roman" color="white"size="+1">1.- Suma </p>
+	<p><font face="times new roman" color="white"size="+1">2.- Resta</p>
+	<p><font face="times new roman" color="white"size="+1">3.- Multiplicación</p>
+	<p><font face="times new roman" color="white"size="+1">4.- División</p>
+	<p><font face="times new roman" color="white"size="+1">5.- Transpuesta</p>
+	<p><font face="times new roman" color="white"size="+1">6.- Multiplicación por un escala</p>
+    Ingresa una opcion:<input type="text" name="opcion" id="opcion" style="width:50px;height:20px;background-color:red;color:#FFFFFF;font-size:13pt; font-family:Verdana;text-align:center;" >
+    <input type="button" name="btn1" value="Verificar" onclick="opc_menu()"></td>
+</body>
+</html>
